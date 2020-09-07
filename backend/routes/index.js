@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/chat/register',async function(req, res, next) {
-  console.log('EXPRESS register ', req.body);
+  // console.log('EXPRESS register ', req.body);
   const name = req.body.username;
   if (!name) {
     res.status(400).send({
@@ -45,7 +45,7 @@ router.post('/chat/register',async function(req, res, next) {
     return;
   }
   const {response, error} = await user.register(name, email, password, res);
-  console.log('Register Resp ', response, error)
+  // console.log('Register Resp ', response, error)
   if (error) {
     res.status(400).send({
       "status": "Error",
@@ -60,7 +60,7 @@ router.post('/chat/register',async function(req, res, next) {
 });
 
 router.post('/chat/login', async function(req, res, next) {
-  console.log('EXPRESS login ', req.body);
+  // console.log('EXPRESS login ', req.body);
   const email = req.body.email;
   if (!email) {
     res.status(400).send({
@@ -79,7 +79,7 @@ router.post('/chat/login', async function(req, res, next) {
   }
   const ttl = req.body.ttl ? req.body.ttl : 120;
   const {response, error} = await user.login(email, password, ttl);
-  console.log('Login Resp ', response, error)
+  // console.log('Login Resp ', response, error)
   if (error) {
     res.status(400).send({
       "status": "Error",
@@ -94,10 +94,10 @@ router.post('/chat/login', async function(req, res, next) {
 });
 
 router.post('/chat/logout', async function(req, res, next) {
-  console.log('EXPRESS logout ', req.body);
+  // console.log('EXPRESS logout ', req.body);
   const token = req.body.token;
   const {response, error} = await user.logout(token);
-  console.log('Logout Resp ', response, error)
+  // console.log('Logout Resp ', response, error)
   if (error) {
     res.status(400).send({
       "status": "Error",
@@ -112,7 +112,7 @@ router.post('/chat/logout', async function(req, res, next) {
 });
 
 router.post('/chat/validate', async function(req, res, next) {
-  console.log('EXPRESS validate ', req.body);
+  // console.log('EXPRESS validate ', req.body);
   const loginToken = req.body.token;
   if (!loginToken) {
     res.status(400).send({
@@ -122,7 +122,7 @@ router.post('/chat/validate', async function(req, res, next) {
     return;
   }
   const {response, error} = await user.validate(loginToken)
-  console.log('Validate Resp ', response, error)
+  // console.log('Validate Resp ', response, error)
   if (error) {
     res.status(400).send({
       "status": "Error",
@@ -137,11 +137,11 @@ router.post('/chat/validate', async function(req, res, next) {
 })
 
 router.post('/chat/refresh', async function(req, res, next) {
-  console.log('EXPRESS refresh ', req.body);
+  // console.log('EXPRESS refresh ', req.body);
   const loginToken = req.body.token;
   const ttl = req.body.ttl ? req.body.ttl : 120;
   const {response, error} = await user.refresh(loginToken, ttl);
-  console.log('Refresh Resp ', response, error)
+  // console.log('Refresh Resp ', response, error)
   if (error) {
     res.status(400).send({
       "status": "Error",
@@ -152,6 +152,33 @@ router.post('/chat/refresh', async function(req, res, next) {
       "status": "Success",
       "message": response
     })
+  }
+})
+
+router.post('/chat/get_all_messages', async function(req, res) {
+  const loginToken = req.body.token;
+  const {response, error} = await user.validate(loginToken)
+  // console.log('Validate Resp ', response, error)
+  if (error) {
+    res.status(400).send({
+      "status": "Error",
+      "message": error,
+    })
+  } else {
+    const {response, error} = await user.getAllMessages();
+    // console.log('Refresh Resp ', response, error)
+    if (error) {
+      res.status(400).send({
+        "status": "Error",
+        "message": error,
+      })
+    } else {
+      console.log('GETALLMESSAGE ', response)
+      res.json({
+        "status": "Success",
+        "message": response
+      })
+    }
   }
 })
 

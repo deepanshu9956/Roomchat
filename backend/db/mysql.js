@@ -1,7 +1,7 @@
 require('dotenv').config();
 const sql = require("mysql");
 
-console.log(process.env.SQL_HOST);
+// console.log(process.env.SQL_HOST);
 const sqlConnection = sql.createConnection({
     host: process.env.SQL_HOST,
     user: process.env.SQL_USER,
@@ -11,7 +11,7 @@ const sqlConnection = sql.createConnection({
 
 sqlConnection.connect((err)=>{
     if (err) {
-        console.log('BANG!!!!! ERROR CONNECTION ', err);
+        // console.log('BANG!!!!! ERROR CONNECTION ', err);
         throw err
     }
     // sqlConnection.query("CREATE DATABASE chat", function (err, result) {
@@ -38,7 +38,6 @@ sqlOperation = {
             sqlConnection.query( sql, (err, result) => {
                 if (err) return reject( err );
                 resolve(result);
-                console.log("Record inserted");
             });
         });
     },
@@ -53,7 +52,7 @@ sqlOperation = {
                 }
             });
         });
-    }
+    },
 }
 
 module.exports = sqlOperation;

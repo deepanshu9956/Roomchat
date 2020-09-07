@@ -40,7 +40,36 @@ redisOperation = {
                 }
             })
         })
+    },
+    addMessage: async function(user, message) {
+        return new Promise( (resolve, reject) => {
+            const multi = client.multi()
+            multi.rpush('chat.message', JSON.stringify({'username': user, 'message': message}));
+            multi.exec(function(error, result) {
+                if (error) {
+                    reject(error);
+                } else {
+                    client.expire('chat.message', 500);
+                    resolve(result);
+                }
+            })
+        })
+    },
+    getMessages: async function() {
+        return new Promise( (resolve, reject) => {
+            console.log('HI HELLO1')
+            client.lrange('chat.message', 0, -1, function(error, reply) {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(reply);
+                }
+                // ['angularjs', 'backbone']
+            });
+            console.log('HI HELLO2')
+        })
     }
 }
 
 module.exports = redisOperation;
+

@@ -8,16 +8,12 @@ userOperation = {
             await sqlOperation.register(name, email, password)
             return {response: "Registration Successful", error: null}
         } catch(err) {
-            console.log('return error ', err);
             return {response: null, error: err}
         }
     },
     login: async function (email, password, ttl) {
         try {
             const session = await redisOperation.validate(email)
-            if (session) {
-                return {response: null, error: "Already logged in"};
-            }
             const user = await sqlOperation.find(email);
             if (!user) {
                 return {response: null, error: "User not found"}
@@ -86,7 +82,7 @@ userOperation = {
                             reject("No Active Session");
                             return;
                         }
-                        resolve("Active Session");
+                        resolve(regUser);
                     } catch(err) {
                         reject(err);
                     }
@@ -131,6 +127,27 @@ userOperation = {
             })
             return {response: session, error: null}
         } catch(err) {
+            return {response: null, error: err}
+        }
+    },
+    setMessage: async function(email, message) {
+        try {
+            const user = await sqlOperation.find(email);
+            if (!user) {
+                return {response: null, error: "User not found"}
+            }
+            await redisOperation.addMessage(user.name, message);
+        } catch (err) {
+            return {response: null, error: err}
+        }
+    },
+    getAllMessages: async function() {
+        try {
+            console.log('1')
+            const messages = await redisOperation.getMessages()
+            console.log('2')
+            return {response: messages, error: null};
+        } catch (err) {
             return {response: null, error: err}
         }
     }

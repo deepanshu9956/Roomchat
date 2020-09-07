@@ -5,7 +5,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import {first, map} from 'rxjs/operators';
 
 import { environment } from '@environments/environment';
-import { User } from '@app/_models';
+import { User, Message } from '@app/_models';
+import {WebsocketService} from "@app/websocket.service";
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
@@ -14,9 +15,9 @@ export class AccountService {
 
     constructor(
         private router: Router,
-        private http: HttpClient
+        private http: HttpClient,
+        private webSocketService: WebsocketService
     ) {
-        console.log('Called AccountService');
         this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
         this.user = this.userSubject.asObservable();
     }
@@ -27,16 +28,25 @@ export class AccountService {
 
     login(email, password, ttl) {
         return this.http.post<any>(`${environment.apiUrl}/chat/login`, { email, password, ttl })
-            .pipe(map(user => {
+            .pipe(map(data => {
               const localUser: User = {
-                username: user.message.username,
-                token: user.message.accessToken,
+                username: data.message.username,
+                token: data.message.accessToken,
               };
               // store user details and jwt token in local storage to keep user logged in between page refreshes
               localStorage.setItem('user', JSON.stringify(localUser));
               this.userSubject.next(localUser);
               return localUser;
             }));
+    }
+
+    getAllMessages() {
+      const token = this.userSubject.value.token;
+      return this.http.post<any>(`${environment.apiUrl}/chat/get_all_messages`, {token})
+        .pipe(map(data => {
+          // remove user from local storage and set current user to null
+          return data;
+        }));
     }
 
     logout() {
@@ -46,6 +56,7 @@ export class AccountService {
           // remove user from local storage and set current user to null
           localStorage.removeItem('user');
           this.userSubject.next(null);
+          this.webSocketService.disconnection();
           this.router.navigate(['/account/login']);
           return data;
         }));

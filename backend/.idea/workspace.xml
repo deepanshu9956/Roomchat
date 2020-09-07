@@ -1,13 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f2d7659-36fd-4e72-b44b-0a8406c90551" name="Default Changelist" comment="" />
+    <list default="true" id="7f2d7659-36fd-4e72-b44b-0a8406c90551" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/home/img/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/home/img/man-2-512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/chat-app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/e2e/protractor.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/e2e/protractor.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/_models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/_models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/_services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/_services/account.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/account/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/account/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/websocket.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/app/websocket.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../angular-10-registration-login-example/src/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/../angular-10-registration-login-example/src/styles.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/userSession.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/userSession.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/mysql.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/mysql.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/redis.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/redis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1gU1LhE4pysXIoUHQh9XnUl6ff4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -17,6 +63,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -32,36 +79,51 @@
       <workItem from="1598154303490" duration="4678000" />
       <workItem from="1598379833165" duration="135000" />
       <workItem from="1598591998338" duration="34808000" />
+      <workItem from="1598812622816" duration="5189000" />
+      <workItem from="1599125047036" duration="85000" />
+      <workItem from="1599245044751" duration="15398000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="479" y="259" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598681348039">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="479" y="259" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1598681348039" />
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1598794595687">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1599466809360">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1598794595687" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1598794595684">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1599466809360" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1599466809358">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1598794595684" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1598794595679">
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1599466809358" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1599466809354">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1598794595679" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1598794595686">
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1599466809354" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1599466809359">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1598794595686" />
-    <state x="427" y="205" width="586" height="490" key="find.popup" timestamp="1598792592663">
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1599466809359" />
+    <state x="427" y="205" width="586" height="554" key="find.popup" timestamp="1599395118612">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="427" y="205" width="586" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1598792592663" />
+    <state x="427" y="205" width="586" height="554" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1599395118612" />
   </component>
 </project>

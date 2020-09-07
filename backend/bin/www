@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
+const user = require('../bin/userSession');
 const socketio = require('socket.io');
 
 /**
@@ -22,16 +23,28 @@ app.set('port', port);
 
 var server = http.createServer(app);
 const io = socketio(server);
-io.on('connection', socket => {
-  console.log('NewWS Connection');
-  socket.emit('event1', 'event1');
+
+io.on('connection', async (socket) => {
+  const token = socket.handshake.query.token
+  const socketUser = await user.validate(token)
+  if (socketUser.error) {
+    socket.disconnect()
+  } else {
+    const messages = await user.getAllMessages()
+    socket.emit('all_messages', messages);
+    socket.on('sender_message', (data) => {
+      io.sockets.emit('single_message', JSON.stringify({username: socketUser.response.name, message:data}));
+      user.setMessage(socketUser.response.email, data)
+      console.log('Sender Data ', data);
+    });
+  }
 });
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, "192.168.29.10");
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -94,3 +107,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+module.exports = io;

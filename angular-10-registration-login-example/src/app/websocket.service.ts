@@ -9,18 +9,28 @@ import {Observable} from 'rxjs';
 export class WebsocketService {
 
   socket: any;
-  readonly uri: string = 'ws://localhost:3000';
+  readonly uri: string = 'ws://192.168.29.10:3000';
 
-  constructor() {
-    this.socket = io(this.uri);
-  }
+  constructor() {}
 
   // tslint:disable-next-line:typedef
-  connection() {
-    console.log('Dont know');
-    this.socket.on('connection', () => {
-      console.log('Client socket');
+  connection(token) {
+    this.socket = io.connect(this.uri, {
+      query: {
+        token
+      }
     });
+    this.socket.on('connect', () => {
+      console.log('Client socket connect ', this.socket);
+    });
+    this.socket.on('disconnect', () => {
+      console.log('Client socket disconnect ');
+    });
+  }
+  // tslint:disable-next-line:typedef
+  disconnection() {
+    this.socket.close();
+    this.socket.destroy();
   }
   // tslint:disable-next-line:typedef
   listen(eventName: string) {
@@ -30,7 +40,6 @@ export class WebsocketService {
       });
     });
   }
-
   // tslint:disable-next-line:typedef
   emit(eventName: string, data: any) {
     this.socket.emit(eventName, data);
