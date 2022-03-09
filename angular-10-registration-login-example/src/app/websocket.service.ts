@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class WebsocketService {
 
   socket: any;
-  readonly uri: string = 'ws://192.168.29.10:3000';
+  readonly uri: string = 'ws://127.0.0.1:3000';
 
   constructor() {}
 

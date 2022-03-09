@@ -9,6 +9,7 @@ var debug = require('debug')('backend:server');
 var http = require('http');
 const user = require('../bin/userSession');
 const socketio = require('socket.io');
+const { response } = require('express');
 
 /**
  * Get port from environment and store in Express.
@@ -44,7 +45,9 @@ io.on('connection', async (socket) => {
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, "192.168.29.10");
+server.listen(port, "127.0.0.1",(req,res)=>{
+  console.log(`Listening to port ${port}`)
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
